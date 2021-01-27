@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'backend';
-  pfetype: any = []
+  categorie: any = []
  
   constructor(private ser: GestionService, private route: Router) { }
 
@@ -21,8 +21,8 @@ export class AppComponent {
     this.ser.type().subscribe(
 
       (data) => {
-        this.pfetype = data;
-        console.log(this.pfetype)
+        this.categorie = data;
+        console.log(this.categorie)
    
       },
       (err) => { console.log(err) }

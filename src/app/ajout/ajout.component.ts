@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { categorie } from '../modele/Categorie';
+import { Categorie } from '../categorie';
 
 import { GestionService } from '../gestion.service';
-import { pfe } from '../modele/Pfe';
+import { Pfe } from '../pfe';
 
 @Component({
   selector: 'app-ajout',
@@ -12,8 +12,8 @@ import { pfe } from '../modele/Pfe';
 })
 export class AjoutComponent implements OnInit {
 
-  listType: categorie[] = [];
-  pfe: pfe = new pfe();
+  listType: Categorie[] = [];
+  pfe: Pfe = new Pfe();
   constructor(private ser: GestionService, private route: Router) { }
 
   ngOnInit(): void {
@@ -37,7 +37,7 @@ export class AjoutComponent implements OnInit {
     data=>{this.route.navigate(["/liste"])},
     err=>{
       console.log(JSON.toString())
-      console.log(pfe)
+      console.log(this.pfe)
     }
   )
   }
